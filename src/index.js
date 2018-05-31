@@ -7,8 +7,9 @@ painGradation()
 const trimInput = document.querySelector('.trim');
 const lengthInput = document.querySelector('.length');
 trimInput.value = 0
-lengthInput.value = 100
+lengthInput.value = 1000
 let video_length = +lengthInput.value;
+
 
 const leftThumb = document.querySelector('.left-thumb')
 const rightThumb = document.querySelector('.right-thumb')
@@ -41,7 +42,7 @@ const mouse_move_trim = (e) => {
         const position_left_thumb = position_mouse / rangeWrap_percent;
         const position_right_thumb = Math.round(parseInt(rangeWrap_container.style.right) / rangeWrap_percent);
         trimInput.value = Math.round(video_length_percent * position_left_thumb);
-        lengthInput.value = video_length - trimInput.value - position_right_thumb;
+        lengthInput.value = video_length - trimInput.value - position_right_thumb * video_length_percent;
     }
 }
 
@@ -65,8 +66,8 @@ const mouse_move_length = function (e) {
         const rangeWrap_percent = rangeWrap_width / 100;
         const video_length_percent = video_length / 100;
         const position_left_thumb = leftThumb.style.left / rangeWrap_percent;
-        const position_right_thumb = Math.round(parseInt(right_thumb_container.style.right) / rangeWrap_percent);
-        lengthInput.value = video_length - trimInput.value - (position_right_thumb);
+        const position_right_thumb = parseInt(right_thumb_container.style.right) / rangeWrap_percent;
+        lengthInput.value = video_length - trimInput.value - Math.round(position_right_thumb * video_length_percent);
     }
 }
 
