@@ -1,0 +1,91 @@
+body {
+    padding: 25px;
+}
+
+.container-range {
+    width: 100%;
+    height: 50px;
+    border: 1px solid grey;
+}
+
+.range-wrap {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.range-track {
+    width: 100%;
+    height: 3px;
+    background-color: black;
+}
+
+.left-thumb {
+    position: absolute;
+    width: 1px;
+    height: 100%;
+    display: block;
+    z-index: 10;
+    .left-thumb__inner {
+        width: 5px;
+        background-color: rgb(0, 17, 255);
+        height: 100%;
+        display: block;
+        margin-left: -2.5px;
+    }
+}
+
+.right_thumb_container {
+    position: absolute;
+    height: 100%;
+    width: 50%;
+    right: 0;
+    background-color: rgba(127, 255, 212, 0.688)
+}
+
+.right-thumb {
+    position: absolute;
+    width: 1px;
+    height: 100%;
+    display: block;
+    left: 100%;
+    z-index: 10;
+    .right-thumb__inner {
+        width: 5px;
+        background-color: rgb(0, 17, 255);
+        height: 100%;
+        display: block;
+        margin-left: -2.5px;
+    }
+}
+
+.container-input {
+    display: flex;
+    padding: 50px;
+    justify-content: space-around;
+}
+
+.grad-item {
+    position: absolute;
+    top: 5%;
+    width: 1px;
+    height: 90%;
+    background-color: #555;
+}
+
+.grad-item5 {
+    position: absolute;
+    top: 25%;
+    width: 1px;
+    height: 50%;
+    background-color: #555;
+}
+
+.grad-itemQuarted {
+    position: absolute;
+    top: 37.5%;
+    width: 1px;
+    height: 25%;
+    background-color: #555;
+}
